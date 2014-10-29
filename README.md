@@ -44,3 +44,4 @@ A genuine explanation of how the "clone" of QuickCheck written by Kresten Krab T
 - [An example of Property Based Testing in Erlang](http://jlouisramblings.blogspot.it/2011/12/example-of-property-based-testing-in.html)
 - [Notes on Erlang QuickCheck](http://roberto-aloi.com/erlang/notes-on-erlang-quickcheck/)
 - [Erlang Quickcheck Mini](https://github.com/rpt/eqcmini)
+- [Misadventures with Property-Based TDD: A Lesson Learned](http://www.natpryce.com/articles/000800.html): Some useful advice by Nat Price on how to start with property based testing if you are coming from example based testing
