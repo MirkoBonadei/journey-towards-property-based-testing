@@ -48,3 +48,5 @@ A genuine explanation of how the "clone" of QuickCheck written by Kresten Krab T
 - [Exploring Test-Driven Development with QuickCheck](http://www.natpryce.com/articles/000795.html): Nat Price on TDD with QuickCheck
 - [Video: Midwest.io 2014 - Property-Based Testing for Better Code by Jessica Kerr](https://www.youtube.com/watch?v=shngiiBfD80)
 - [Property-Based Testing and Verification: a Catalog of Classroom Examples](http://www.cs.ou.edu/~rlpage/SEcollab/rlpIFL2011.pdf)
+- [Writing simple-check by Reid Draper](http://reiddraper.com/writing-simple-check/)
+- [Powerful Testing with test.check by Reid Draper at Clojure/West 2014](https://www.youtube.com/watch?v=JMhNINPo__g)
