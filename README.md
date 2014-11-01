@@ -51,4 +51,4 @@ A genuine explanation of how the "clone" of QuickCheck written by Kresten Krab T
 - [Property-Based Testing and Verification: a Catalog of Classroom Examples](http://www.cs.ou.edu/~rlpage/SEcollab/rlpIFL2011.pdf)
 - [Writing simple-check by Reid Draper](http://reiddraper.com/writing-simple-check/)
 - [Powerful Testing with test.check by Reid Draper at Clojure/West 2014](https://www.youtube.com/watch?v=JMhNINPo__g)
-- [Basho Technologies Hangout 005 - Property Based Testing](https://www.youtube.com/watch?v=D06M8NMJYCw): interesting talk between Tom Sandero and Reid Draper
+- [Basho Technologies Hangout 005 - Property Based Testing](https://www.youtube.com/watch?v=D06M8NMJYCw): interesting talk between Tom Santero and Reid Draper
