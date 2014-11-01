@@ -46,6 +46,7 @@ A genuine explanation of how the "clone" of QuickCheck written by Kresten Krab T
 - [Erlang Quickcheck Mini](https://github.com/rpt/eqcmini)
 - [Misadventures with Property-Based TDD: A Lesson Learned](http://www.natpryce.com/articles/000800.html): Some useful advice by Nat Price on how to start with property based testing if you are coming from example based testing
 - [Exploring Test-Driven Development with QuickCheck](http://www.natpryce.com/articles/000795.html): Nat Price on TDD with QuickCheck
+- [TDD with QuickCheck](http://primitive-automaton.logdown.com/posts/142511/tdd-with-quickcheck): to continue the discourse about TDD and property based testing. (it is also an answer to the previous resource)
 - [Video: Midwest.io 2014 - Property-Based Testing for Better Code by Jessica Kerr](https://www.youtube.com/watch?v=shngiiBfD80)
 - [Property-Based Testing and Verification: a Catalog of Classroom Examples](http://www.cs.ou.edu/~rlpage/SEcollab/rlpIFL2011.pdf)
 - [Writing simple-check by Reid Draper](http://reiddraper.com/writing-simple-check/)
