@@ -15,7 +15,16 @@
 %%
 %% For the moment there is more focus on properties then on generators and it is
 %% for this reason that I have decided to generate (for now) vectors from the 
-%% two dimensional vector space over the real numbers (from now R^2).
+%% two dimensional vector space over the real numbers (from now R^2)[*].
+%%
+%% [*] NB: I have to switch from real numbers to integer numbers (aka the ring Z) 
+%%         because I have some problems with floating point arithmetics in Erlang 
+%%         and at the moment I am not able to keep the associative property with 
+%%         int numbers. It is a problem which goes beyond the property based 
+%%         testing and I am going to address it in the next days.
+%%         So that, close an eye on the fact that we have not a vector space in 
+%%         these examples, because scalars have to be any field and the integer
+%%         numbers does not form a field but only a ring.
 
 -export([
          %% addition properties
@@ -28,7 +37,7 @@
 %%         prop_vector_scalar_mul_is_the_mul_of_vector_components_for_the_scalar/0
 ]).
 
-%% Given two vectors A and B which belong to R^2
+%% Given two vectors A and B which belong to Z^2
 %% And A = (a1, a2)
 %% And B = (b1, b2) 
 %% Then C = A + B 
@@ -38,7 +47,7 @@ prop_vector_addition_is_the_addition_of_relative_components() ->
     ?NUMBER_OF_GENERATED_TESTS,
     ?FORALL(
       {A, B},
-      {vector(2, real()), vector(2, real())},
+      {vector(2, int()), vector(2, int())},
       begin
         [Xa, Ya] = A,
         [Xb, Yb] = B,
@@ -47,19 +56,21 @@ prop_vector_addition_is_the_addition_of_relative_components() ->
         eqc:equals(Yc, Ya + Yb)
       end)).
 
-%% Given two vectors A and B which belong to R^2
+%% Given two vectors A and B which belong to Z^2
 %% Then A + B = B + A 
 prop_vector_addition_is_commutative() ->
   numtests(
     ?NUMBER_OF_GENERATED_TESTS,
     ?FORALL(
       {A, B},
-      {vector(2, real()), vector(2, real())},
+      {vector(2, int()), vector(2, int())},
       eqc:equals(vector:add(A, B), vector:add(B, A)))).
 
-%% Given two vectors A and B which belong to R^2
+%% Given two vectors A and B which belong to Z^2
 %% Then A + (B + C) = (A + B) + C 
 prop_vector_addition_is_associative() ->
+  %% REPORT OF THE FLOATING POINT ARITHMETIC PROBLEM:
+  %%
   %% in this test I had a problem with floating point number comparison,
   %% eqc:equals/2 was too strict since it probably uses =:= and I was 
   %% getting errors such the one below only after 10/15 tests:
@@ -74,16 +85,10 @@ prop_vector_addition_is_associative() ->
     ?NUMBER_OF_GENERATED_TESTS,
     ?FORALL(
       {A, B, C},
-      {vector(2, real()), vector(2, real()), vector(2, real())},
-      %% eqc:equals(vector:add(A, vector:add(B, C)), vector:add(vector:add(A, B), C)))).
-      begin
-        [LeftX, LeftY] = vector:add(A, vector:add(B, C)),
-        [RightX, RightY] = vector:add(vector:add(A, B), C),
-        fuzzy_match(LeftX, RightX, 1),
-        fuzzy_match(LeftY, RightY, 1)
-      end)).
+      {vector(2, int()), vector(2, int()), vector(2, int())},
+      eqc:equals(vector:add(A, vector:add(B, C)), vector:add(vector:add(A, B), C)))).
 
-%% Given a vector A which belongs to R^2
+%% Given a vector A which belongs to Z^2
 %% And the zero vector 0 [which in our case is (0, 0)]
 %% Then A + 0 = A 
 prop_zero_vector_is_the_addition_identity_element() ->
@@ -91,7 +96,7 @@ prop_zero_vector_is_the_addition_identity_element() ->
     ?NUMBER_OF_GENERATED_TESTS,
     ?FORALL(
       {A, ZeroVector},
-      {vector(2, real()), vector(2, 0)},
+      {vector(2, int()), vector(2, 0)},
       eqc:equals(vector:add(A, ZeroVector), A))).
 
 %% TODO: to write this property I need the scalar multiplication to generate the
@@ -103,8 +108,3 @@ prop_zero_vector_is_the_addition_identity_element() ->
 %%     ?FORALL(
 %%       )).
 
-%% private functions
-fuzzy_match(A,B,L) ->
-  <<AT:L/binary, _/binary>> = <<A/float>>,
-  <<BT:L/binary, _/binary>> = <<B/float>>,
-  eqc:equals(AT, BT).
