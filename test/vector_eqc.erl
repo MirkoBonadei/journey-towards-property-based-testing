@@ -28,7 +28,6 @@
 
 -export([
          %% addition properties
-         prop_vector_addition_is_the_addition_of_relative_components/0,
          prop_vector_addition_is_commutative/0,
          prop_vector_addition_is_associative/0,
          prop_zero_vector_is_the_addition_identity_element/0
@@ -37,24 +36,7 @@
 %%         prop_vector_scalar_mul_is_the_mul_of_vector_components_for_the_scalar/0
 ]).
 
-%% Given two vectors A and B which belong to Z^2
-%% And A = (a1, a2)
-%% And B = (b1, b2) 
-%% Then C = A + B 
-%% And C = (a1 + b1, a2 + b2)
-prop_vector_addition_is_the_addition_of_relative_components() ->
-  numtests(
-    ?NUMBER_OF_GENERATED_TESTS,
-    ?FORALL(
-      {A, B},
-      {vector(2, int()), vector(2, int())},
-      begin
-        [Xa, Ya] = A,
-        [Xb, Yb] = B,
-        [Xc, Yc] = vector:add(A, B),
-        eqc:equals(Xc, Xa + Xb),
-        eqc:equals(Yc, Ya + Yb)
-      end)).
+%% TODO: Is it possible to generate vector spaces with random dimension?
 
 %% Given two vectors A and B which belong to Z^2
 %% Then A + B = B + A 
