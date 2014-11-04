@@ -20,7 +20,7 @@
 %% [*] NB: I have to switch from real numbers to integer numbers (aka the ring Z) 
 %%         because I have some problems with floating point arithmetics in Erlang 
 %%         and at the moment I am not able to keep the associative property with 
-%%         int numbers. It is a problem which goes beyond the property based 
+%%         real numbers. It is a problem which goes beyond the property based 
 %%         testing and I am going to address it in the next days.
 %%         So that, close an eye on the fact that we have not a vector space in 
 %%         these examples, because scalars have to be any field and the integer

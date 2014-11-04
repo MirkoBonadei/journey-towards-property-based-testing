@@ -33,7 +33,9 @@ OK, passed 100 tests
 
 
 ## Resources
-There is not so much material on the web, so that I try to list below some useful resources:
+There is not so much material on the web, so that I try to list below some useful resources.
+
+### Readings
 - [Quickcheck: A lightweight tool for random testing of Haskell programs](http://www.eecs.northwestern.edu/~robby/courses/395-495-2009-fall/quick.pdf): paper by John Huges and Koen Claessen
 - [Triq: The free quickcheck for Erlang](http://www.javalimit.com/2010/05/triq-the-free-quickcheck-for-erlang.html):
 A genuine explanation of how the "clone" of QuickCheck written by Kresten Krab Thorup works
@@ -47,8 +49,15 @@ A genuine explanation of how the "clone" of QuickCheck written by Kresten Krab T
 - [Misadventures with Property-Based TDD: A Lesson Learned](http://www.natpryce.com/articles/000800.html): Some useful advice by Nat Price on how to start with property based testing if you are coming from example based testing
 - [Exploring Test-Driven Development with QuickCheck](http://www.natpryce.com/articles/000795.html): Nat Price on TDD with QuickCheck
 - [TDD with QuickCheck](http://primitive-automaton.logdown.com/posts/142511/tdd-with-quickcheck): to continue the discourse about TDD and property based testing. (it is also an answer to the previous resource)
-- [Video: Midwest.io 2014 - Property-Based Testing for Better Code by Jessica Kerr](https://www.youtube.com/watch?v=shngiiBfD80)
 - [Property-Based Testing and Verification: a Catalog of Classroom Examples](http://www.cs.ou.edu/~rlpage/SEcollab/rlpIFL2011.pdf)
 - [Writing simple-check by Reid Draper](http://reiddraper.com/writing-simple-check/)
-- [Powerful Testing with test.check by Reid Draper at Clojure/West 2014](https://www.youtube.com/watch?v=JMhNINPo__g)
+
+
+
+### Videos
 - [Basho Technologies Hangout 005 - Property Based Testing](https://www.youtube.com/watch?v=D06M8NMJYCw): interesting talk between Tom Santero and Reid Draper
+- [Powerful Testing with test.check by Reid Draper at Clojure/West 2014](https://www.youtube.com/watch?v=JMhNINPo__g)
+- [Video: Midwest.io 2014 - Property-Based Testing for Better Code by Jessica Kerr](https://www.youtube.com/watch?v=shngiiBfD80)
+
+### Code
+- [Basho Repositories](https://github.com/basho): Basho repositories are full of examples (even complex ones) on how to use QuickCheck to test their products 
