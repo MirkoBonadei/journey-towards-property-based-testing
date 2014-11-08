@@ -1,7 +1,11 @@
 -module(my_lists).
--export([
-         append/2
-         ]).
+-export([sum/1]).
 
-append(List1, List2) ->
-  List1 ++ List2.
+sum(L) ->
+  sum_acc(L, 0).
+
+%% private functions
+sum_acc([], Acc) ->
+  Acc;
+sum_acc([H|T], Acc) ->
+  sum_acc(T, Acc + H).
