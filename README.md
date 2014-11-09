@@ -36,16 +36,15 @@ OK, passed 200 tests
 This is related to the function `my_lists:sum/1`, which takes a `list()` as input and returns the sum of the elements of the list.
 The property should be read as: 
 
-_foreach list *L* of natural numbers, the sum of the elements of the list *L* is equal to the sum of the elements of the element *0* concatenated to the list *L*_.
+_foreach list **L** of natural numbers, the sum of the elements of the list **L** is equal to the sum of the elements of the element **0** concatenated to the list **L**_.
 
 ```erlang
 prop_sum_identity() ->
-  numtests(?NUMBER_OF_GENERATED_TESTS,
-    ?FORALL({L}, {list(nat())},
-            begin
-              L1 = [0|L],
-              eqc:equals(my_lists:sum(L), my_lists:sum(L1))
-            end)).
+  ?FORALL({L}, {list(nat())},
+          begin
+            L1 = [0|L],
+            eqc:equals(my_lists:sum(L), my_lists:sum(L1))
+          end).
 ```
 
 
