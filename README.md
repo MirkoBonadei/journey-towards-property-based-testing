@@ -34,9 +34,11 @@ OK, passed 200 tests
 ### An example of property:
 
 This is related to the function `my_lists:sum/1`, which takes a `list()` as input and returns the sum of the elements of the list.
-The property should be read as: _foreach list *L* of natural numbers, the sum of the elements of the list *L* is equal to the sum of the elements of the element *0* concatenated to the list *L*_.
+The property should be read as: 
 
-```erl
+_foreach list *L* of natural numbers, the sum of the elements of the list *L* is equal to the sum of the elements of the element *0* concatenated to the list *L*_.
+
+```erlang
 prop_sum_identity() ->
   numtests(?NUMBER_OF_GENERATED_TESTS,
     ?FORALL({L}, {list(nat())},
