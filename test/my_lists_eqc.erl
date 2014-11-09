@@ -1,6 +1,6 @@
--module(lists_eqc).
+-module(my_lists_eqc).
 -include_lib("eqc/include/eqc.hrl").
--define(NUMBER_OF_GENERATED_TESTS, 1000).
+-define(NUMBER_OF_GENERATED_TESTS, 200).
 -export([
          %% sum/1
          prop_sum_monotonicity/0,
