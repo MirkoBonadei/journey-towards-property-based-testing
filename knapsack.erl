@@ -1,0 +1,2 @@
+-module(knapsack).
+-compile(export_all). %% TODO: remove this!
