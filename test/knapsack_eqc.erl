@@ -13,7 +13,10 @@
 %% A "thing" is something with a weight and a value, in erlang:
 %% #{ w => nat(), v => nat()}
 thing() ->
-  ?LET({Weight, Value}, {nat(), nat()}, #{ w => Weight, v => Value}).
+  ?LET(
+     {Weight, Value}, 
+     {?SUCHTHAT(W, nat(), W > 0), nat()}, 
+     #{ w => Weight, v => Value}).
 
 
 %% Properties
