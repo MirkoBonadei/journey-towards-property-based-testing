@@ -10,7 +10,7 @@
 
 %% my_lists:sum/1
 prop_sum_monotonicity() ->
-  numtests(?NUMBER_OF_GENERATED_TESTS,
+  eqc:numtests(?NUMBER_OF_GENERATED_TESTS,
     ?FORALL({L, PositiveInteger}, {list(nat()), nat()}, 
             begin
               L1 = [PositiveInteger|L],
@@ -18,7 +18,7 @@ prop_sum_monotonicity() ->
             end)).
 
 prop_sum_identity() ->
-  numtests(?NUMBER_OF_GENERATED_TESTS,
+  eqc:numtests(?NUMBER_OF_GENERATED_TESTS,
     ?FORALL({L}, {list(nat())}, 
             begin
               L1 = [0|L],
@@ -26,7 +26,7 @@ prop_sum_identity() ->
             end)).
 
 prop_sum_base_case() ->
-  numtests(?NUMBER_OF_GENERATED_TESTS,
+  eqc:numtests(?NUMBER_OF_GENERATED_TESTS,
     ?FORALL({Int}, {int()}, 
             begin
               L = [Int],
