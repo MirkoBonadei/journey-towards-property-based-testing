@@ -11,9 +11,9 @@
 %% my_lists:sum/1
 prop_sum_monotonicity() ->
   eqc:numtests(?NUMBER_OF_GENERATED_TESTS,
-    ?FORALL({L, PositiveInteger}, {list(nat()), nat()}, 
+    ?FORALL({L, NonNegInteger}, {list(nat()), nat()}, 
             begin
-              L1 = [PositiveInteger|L],
+              L1 = [NonNegInteger|L],
               my_lists:sum(L) =< my_lists:sum(L1)
             end)).
 
