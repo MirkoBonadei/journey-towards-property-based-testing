@@ -2,8 +2,8 @@
 -include_lib("triq/include/triq.hrl").
 -define(NUMBER_OF_GENERATED_TESTS, 100).
 -export([
-         %% sum/1
-         prop_sum_monotonicity/0
+         sum_test/0
+         %%prop_sum_monotonicity/0
          %%prop_sum_identity/0,
          %%prop_sum_base_case/0
 ]).
@@ -16,7 +16,8 @@ prop_sum_monotonicity() ->
     ?FORALL({L, NonNegInteger}, {list(pos_integer()), pos_integer()}, 
             begin
               L1 = [NonNegInteger|L],
-              my_lists:sum(L) =< my_lists:sum(L1)
+              %%my_lists:sum(L) =< my_lists:sum(L1)
+              1 = 0
             end).
 
 %% prop_sum_identity() ->
