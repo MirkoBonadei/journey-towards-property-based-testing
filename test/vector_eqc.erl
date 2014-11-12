@@ -1,6 +1,6 @@
--module(vector_eqc).
--include_lib("eqc/include/eqc.hrl").
--define(NUMBER_OF_GENERATED_TESTS, 2000).
+%% -module(vector_eqc).
+%% -include_lib("eqc/include/eqc.hrl").
+%% -define(NUMBER_OF_GENERATED_TESTS, 2000).
 
 %% This module is my exercise to implement vector calculus in Erlang defining
 %% all the well known properties of the operations of the vector algebra.
@@ -26,31 +26,31 @@
 %%         these examples, because scalars have to be any field and the integer
 %%         numbers does not form a field but only a ring.
 
--export([
+%% -export([
          %% addition properties
-         prop_vector_addition_is_commutative/0,
-         prop_vector_addition_is_associative/0,
-         prop_zero_vector_is_the_addition_identity_element/0
+         %% prop_vector_addition_is_commutative/0,
+         %% prop_vector_addition_is_associative/0,
+         %% prop_zero_vector_is_the_addition_identity_element/0
 %%         prop_inverse_element_of_the_addition/0,
          %% scalar multiplication properties
 %%         prop_vector_scalar_mul_is_the_mul_of_vector_components_for_the_scalar/0
-]).
+%% ]).
 
 %% TODO: Is it possible to generate vector spaces with random dimension?
 
 %% Given two vectors A and B which belong to Z^2
 %% Then A + B = B + A 
-prop_vector_addition_is_commutative() ->
-  numtests(
-    ?NUMBER_OF_GENERATED_TESTS,
-    ?FORALL(
-      {A, B},
-      {vector(2, int()), vector(2, int())},
-      eqc:equals(vector:add(A, B), vector:add(B, A)))).
+%% prop_vector_addition_is_commutative() ->
+%%   numtests(
+%%     ?NUMBER_OF_GENERATED_TESTS,
+%%     ?FORALL(
+%%       {A, B},
+%%       {vector(2, int()), vector(2, int())},
+%%       eqc:equals(vector:add(A, B), vector:add(B, A)))).
 
 %% Given two vectors A and B which belong to Z^2
 %% Then A + (B + C) = (A + B) + C 
-prop_vector_addition_is_associative() ->
+%% prop_vector_addition_is_associative() ->
   %% REPORT OF THE FLOATING POINT ARITHMETIC PROBLEM:
   %%
   %% in this test I had a problem with floating point number comparison,
@@ -63,23 +63,23 @@ prop_vector_addition_is_associative() ->
   %% > {[0.3333333333333333,0.0],[1.0,0.0],[1.0,0.0]}
   %% > [2.3333333333333335,0.0] /= [2.333333333333333,0.0]
   %% This is why I have decided to make a fuzzy match between vector components. 
-  numtests(
-    ?NUMBER_OF_GENERATED_TESTS,
-    ?FORALL(
-      {A, B, C},
-      {vector(2, int()), vector(2, int()), vector(2, int())},
-      eqc:equals(vector:add(A, vector:add(B, C)), vector:add(vector:add(A, B), C)))).
+  %% numtests(
+  %%   ?NUMBER_OF_GENERATED_TESTS,
+  %%   ?FORALL(
+  %%     {A, B, C},
+  %%     {vector(2, int()), vector(2, int()), vector(2, int())},
+  %%     eqc:equals(vector:add(A, vector:add(B, C)), vector:add(vector:add(A, B), C)))).
 
 %% Given a vector A which belongs to Z^2
 %% And the zero vector 0 [which in our case is (0, 0)]
 %% Then A + 0 = A 
-prop_zero_vector_is_the_addition_identity_element() ->
-  numtests(
-    ?NUMBER_OF_GENERATED_TESTS,
-    ?FORALL(
-      {A, ZeroVector},
-      {vector(2, int()), vector(2, 0)},
-      eqc:equals(vector:add(A, ZeroVector), A))).
+%% prop_zero_vector_is_the_addition_identity_element() ->
+%%   numtests(
+%%     ?NUMBER_OF_GENERATED_TESTS,
+%%     ?FORALL(
+%%       {A, ZeroVector},
+%%       {vector(2, int()), vector(2, 0)},
+%%       eqc:equals(vector:add(A, ZeroVector), A))).
 
 %% TODO: to write this property I need the scalar multiplication to generate the
 %% inverse element of the addition
