@@ -1,4 +1,4 @@
-%% -module(clock_eqc).
+-module(clock_eqc).
 %% -include_lib("eqc/include/eqc.hrl").
 %% -compile(export_all).
 

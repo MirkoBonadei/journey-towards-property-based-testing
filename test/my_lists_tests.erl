@@ -3,9 +3,9 @@
 -define(NUMBER_OF_GENERATED_TESTS, 100).
 -export([
          %% sum/1
-         prop_sum_monotonicity/0,
-         prop_sum_identity/0,
-         prop_sum_base_case/0
+         prop_sum_monotonicity/0
+         %%prop_sum_identity/0,
+         %%prop_sum_base_case/0
 ]).
 
 sum_test() ->

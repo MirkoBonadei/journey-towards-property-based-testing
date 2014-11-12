@@ -1,4 +1,4 @@
-%% -module(vector_eqc).
+-module(vector_eqc).
 %% -include_lib("eqc/include/eqc.hrl").
 %% -define(NUMBER_OF_GENERATED_TESTS, 2000).
 
