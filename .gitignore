@@ -2,3 +2,4 @@ ebin/*
 current_counterexample.eqc
 *.dump
 deps
+.eunit
