@@ -43,7 +43,7 @@ prop_sum_identity() ->
   ?FORALL({L}, {list(nat())},
           begin
             L1 = [0|L],
-            eqc:equals(my_lists:sum(L), my_lists:sum(L1))
+            my_lists:sum(L) =:= my_lists:sum(L1)
           end).
 ```
 
