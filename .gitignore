@@ -4,3 +4,4 @@ current_counterexample.eqc
 deps
 .eunit
 .rebar
+.qc
