@@ -40,7 +40,7 @@ _foreach list **L** of natural numbers, the sum of the elements of the list **L*
 
 ```erlang
 prop_sum_identity() ->
-  ?FORALL({L}, {list(nat())},
+  ?FORALL({L}, {list(pos_integer())},
           begin
             L1 = [0|L],
             my_lists:sum(L) =:= my_lists:sum(L1)
