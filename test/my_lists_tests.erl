@@ -1,15 +1,7 @@
 -module(my_lists_tests).
 -include_lib("triq/include/triq.hrl").
--include_lib("eunit/include/eunit.hrl").
--define(NUMBER_OF_GENERATED_TESTS, 100).
--export([sum_test/0]).
 
-sum_test() ->
-  triq:check(prop_sum_monotonicity()),
-  triq:check(prop_sum_identity()),
-  triq:check(prop_sum_base_case()).
-
-%% my_lists:sum/1
+%% my_lists:sum/1 properties
 prop_sum_monotonicity() ->
     ?FORALL({L, NonNegInteger}, {list(int()), pos_integer()},
             begin
