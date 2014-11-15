@@ -1,4 +1,4 @@
--module(vector_eqc).
+-module(vector_tests).
 -include_lib("triq/include/triq.hrl").
 
 %% This module is my exercise to implement vector calculus in Erlang defining
