@@ -18,7 +18,7 @@ time_dom() ->
   {choose(0, 23), choose(0, 59), choose(0, 59)}.
 
 %% Generates a time between 00:00:00 and 3:09:09.
-%% It olny needs to create small deltas without having to use 
+%% It is only needed to create small deltas without having to use 
 %% random:uniform/1 inside the property because in that case 
 %% Quickcheck does not shrinks it. (used below)
 delta_dom() ->
@@ -64,7 +64,7 @@ prop_a_second_weights_1_second() ->
          Seconds1 =:= Seconds2 - 1
       end)).
 
-%% This property is difficult to write because I are not managing 
+%% This property is difficult to write because I am not managing 
 %% time overflow. We start from 00:00:00 and stop to 23:59:59, so that 
 %% I have to find a trusted delta to sum to the original time.
 prop_time_to_seconds_is_monotonically_increasing() ->
